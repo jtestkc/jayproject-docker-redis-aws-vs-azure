@@ -1,13 +1,13 @@
 services:
   frontend:
-    build: "./frontend"
+    image: "jtestkc/frontend"
     ports:
       - "5000:5000"
     networks:
       - jaynet
 
   backend:
-    build: "./backend"
+    image: "jtestkc/backend"
     depends_on:
       - db
       - redis
@@ -15,7 +15,7 @@ services:
       - jaynet
 
   dashboard:
-    build: "./dashboard"
+    image: "jtestkc/dashboard"
     depends_on:
       - db
       - backend
